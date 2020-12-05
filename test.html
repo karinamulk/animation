@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      body {
+        background: #999;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      .container {
+        background: #fff;
+        height: 50px;
+        width: 300px;
+        overflow: hidden;
+        padding: 10px 0;
+        position: relative;
+        background: black;
+      }
+      .row {
+        width: 3080px;
+        height: 20px;
+        vertical-align: middle;
+        position: absolute;
+        top: 15px;
+        left: 0;
+        animation: row-move 22s linear infinite;
+      }
+      .row p {
+        width: 1535px;
+        color: red;
+        margin: 0;
+        display: inline-block;
+        position: absolute;
+        opacity: 0;
+      }
+      .btn {
+        width: 300px;
+        height: 50px;
+        margin-bottom: 10px;
+        background-color: #111;
+        text-align: center;
+        color: white;
+        padding: 15px 0;
+        font-weight: bold;
+        letter-spacing: 3px;
+        transition: all .2s;
+      }
+      .btn:hover {
+        background: red;
+        transition: all.2s;
+      }
+      .btn:hover ~ .container .row {
+        animation-play-state: paused;
+      }
+      #r1 {
+        animation: row-1 10s infinite;
+
+      }
+      #r2 {
+        animation: row-2 10s infinite;
+        animation-delay: 10s;
+      }
+      @keyframes row-move {
+        0% { right: -2000px;}
+        50% { right: 100%}
+        100% { opacity: 0;}
+      }
+      @keyframes row-1 {
+        0% { left: 0; opacity: 1;}
+        50% { left: -1535px; opacity: 1;}
+        50.1% {  opacity: 0;}
+        100% { opacity: 0;}
+
+      }
+      @keyframes row-2 {
+        0% { right: -1535; opacity: 1;}
+        50% { right: 100%; opacity: 1;}
+        50.1% {  opacity: 0;}
+        100% { opacity: 0;}
+
+      }
+      .clock {
+        width: 300px;
+        height: 100px;
+        position: relative;
+        margin-top: 100px;
+      }
+      .cl-el {
+        width: 60px;
+        height: 100%;
+        background: #111;
+        display: inline-block;
+        color: white;
+        vertical-align: top;
+        position: relative;
+        overflow: hidden;
+        background: rgb(252,255,78);
+background: linear-gradient(0deg, rgba(252,255,78,1) 0%, rgba(255,77,228,1) 41%, rgba(0,247,255,1) 100%);
+      }
+      .cl-dv {
+        width: 16px;
+        height: 100%;
+        /* background: #111; */
+        display: inline-block;
+        color: white;
+        vertical-align: top;
+        font-size: 50px;
+        padding: 17px 0;
+        font-weight: bold;
+        background: rgb(252,255,78);
+background: linear-gradient(0deg, rgba(252,255,78,1) 0%, rgba(255,77,228,1) 41%, rgba(0,247,255,1) 100%);
+      }
+      .num  {
+        width: 60px;
+        font-size: 50px;
+        text-align: center;
+        line-height: 100px;
+        position: absolute;
+        top: 0;
+
+      }
+      .sec-e {
+          animation: sec 10s steps(10) infinite;
+      }
+      .sec-d {
+          animation: dec 60s steps(6) infinite;
+      }
+      .min-e {
+          animation: sec 600s steps(10) infinite;
+      }
+      .min-d {
+          animation: dec 3600s steps(6) infinite;
+      }
+      .rotate {
+        background-size: auto 200%;
+        animation: rotate 1s linear infinite;
+      }
+      @keyframes sec {
+        0% {top: 0;}
+
+      100% {top: -1000px;}
+      }
+      @keyframes dec {
+        0% {top: 0;}
+
+      100% {top: -600%;}
+      }
+      @keyframes rotate {
+        0% {background-position: left 0;}
+        100% {background-position: left 200%;}
+      }
+    </style>
+  </head>
+  <body>
+    <div class="btn">
+      ||
+    </div>
+    <div class="container">
+      <div class="row">
+        <p id="r1">В годы Гражданской войны Александр Соловьёв активно участвовал в Белом движении, в том числе в карательных акциях против красных партизан в Сибири и на Дальнем Востоке, написал портрет Верховного правителя адмирала Александра Колчака, который</p>
+        <p id="r2">В годы Гражданской войны Александр Соловьёв активно участвовал в Белом движении, в том числе в карательных акциях против красных партизан в Сибири и на Дальнем Востоке, написал портрет Верховного правителя адмирала Александра Колчака, который</p>
+
+      </div>
+      </div>
+      <div class="clock">
+        <div class="cl-el">
+          <div class="num min-d">
+            0 1 2 3 4 5 6
+          </div>
+          </div>
+        <div class="cl-el">
+          <div class="num min-e">
+            0 1 2 3 4 5 6 7 8 9
+          </div>
+        </div>
+        <div class="cl-dv">:</div>
+        <div class="cl-el">
+          <div class="num sec-d">
+            0 1 2 3 4 5
+          </div>
+        </div>
+        <div class="cl-el rotate">
+          <div class="num sec-e">
+            0 1 2 3 4 5 6 7 8 9 0
+          </div>
+        </div>
+
+      </div>
+
+  </body>
+</html>
